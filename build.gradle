@@ -55,7 +55,7 @@ shadowJar {
 }
 
 def serverDir = file("${project.buildDir}/server")
-def serverJar = file("${serverDir}/paper.jar")
+def serverJar = file("${serverDir}/paper-${project.minecraft_version}.jar")
 def pluginsDir = file("${serverDir}/plugins")
 def pluginJar = file("${pluginsDir}/${archivesBaseName}.jar")
 
