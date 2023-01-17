@@ -1,0 +1,4 @@
+name: ${plugin_name}
+version: ${plugin_version}
+main: ${plugin_main}
+api-version: ${plugin_api}
