@@ -57,7 +57,7 @@ shadowJar {
 def serverDir = file("${project.buildDir}/server")
 def serverJar = file("${serverDir}/paper-${project.minecraft_version}.jar")
 def pluginsDir = file("${serverDir}/plugins")
-def pluginJar = file("${pluginsDir}/${archivesBaseName}.jar")
+def pluginJar = file("${pluginsDir}/plugin.jar")
 
 tasks.register('prepare') {
     group 'server'
