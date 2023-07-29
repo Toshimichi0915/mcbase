@@ -32,6 +32,12 @@ dependencies {
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    implementation 'net.toshimichi:indexer:1.0.2'
+    implementation 'org.spongepowered:configurate-yaml:4.0.0'
 }
 
 test {
