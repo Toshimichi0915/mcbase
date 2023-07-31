@@ -1,8 +1,6 @@
 package net.toshimichi.mcbase;
 
 import lombok.SneakyThrows;
-import net.toshimichi.mcbase.commands.SimpleCommandExecutor;
-import net.toshimichi.mcbase.commands.user.UserCommand;
 import net.toshimichi.mcbase.services.ServiceRegistry;
 import org.bukkit.plugin.java.JavaPlugin;
 

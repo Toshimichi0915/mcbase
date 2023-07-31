@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class IntArgument implements Command {
+public class StringArgument implements Command {
 
     private final String name;
     private final Command next;
@@ -18,18 +18,13 @@ public class IntArgument implements Command {
     @Override
     public void execute(CommandContext context) {
         if (context.getArgs().isEmpty()) {
-            context.getSender().sendMessage(Component.text("整数を入力してください。").color(NamedTextColor.RED));
+            context.getSender().sendMessage(Component.text("文字列を入力してください。").color(NamedTextColor.RED));
             return;
         }
 
         String arg = context.getArgs().pop();
-        try {
-            int result = Integer.parseInt(arg);
-            context.setVariable(name, result);
-            if (next != null) next.execute(context);
-        } catch (NumberFormatException e) {
-            context.getSender().sendMessage(Component.text(arg + "は整数ではありません。").color(NamedTextColor.RED));
-        }
+        context.setVariable(name, arg);
+        if (next != null) next.execute(context);
     }
 
     @Override
@@ -37,14 +32,9 @@ public class IntArgument implements Command {
         if (context.getArgs().isEmpty()) return List.of();
 
         String arg = context.getArgs().pop();
-        try {
-            int result = Integer.parseInt(arg);
-            context.setVariable(name, result);
-            if (next == null) return List.of();
-            return next.complete(context);
-        } catch (NumberFormatException e) {
-            return List.of();
-        }
+        context.setVariable(name, arg);
+        if (next == null) return List.of();
+        return next.complete(context);
     }
 
     @Override

@@ -45,9 +45,12 @@ public class AutoSaveService<T extends ObservableEntity<T>> implements Service, 
 
     public void save() {
         Iterator<T> iterator = dirty.iterator();
+        if (!iterator.hasNext()) return;
         T first = iterator.next();
 
         iterator.remove();
+
+        if (!repository.getAll().contains(first)) return;
         repository.save(first);
     }
 

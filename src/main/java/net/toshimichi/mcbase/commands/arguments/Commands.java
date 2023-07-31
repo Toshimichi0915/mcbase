@@ -27,11 +27,19 @@ public class Commands {
         return (next) -> new IntArgument(name, next);
     }
 
+    public static CommandArgument multiString(String name) {
+        return (next) -> new MultiStringArgument(name, next);
+    }
+
     public static CommandArgument permission(String permission) {
         return (next) -> new PermissionArgument(permission, next);
     }
 
     public static CommandArgument player(String name) {
         return (next) -> new PlayerArgument(name, next);
+    }
+
+    public static CommandArgument string(String name) {
+        return (next) -> new StringArgument(name, next);
     }
 }

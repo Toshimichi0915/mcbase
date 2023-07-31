@@ -58,6 +58,7 @@ public class PlayerArgument implements Command {
                 return List.of();
             }
         } else {
+            context.setVariable(name, player);
             if (next == null) return List.of();
             return next.complete(context);
         }
